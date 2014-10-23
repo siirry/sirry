@@ -15,7 +15,7 @@ func main() {
 		port = "8080"
 	}
 
-	http.HandelFunc("/markdown", GenerateMarkdown)
+	http.HandleFunc("/markdown", GenerateMarkdown)
 	http.Handle("/", http.FileServer(http.Dir("public")))
 	http.ListenAndServe(":"+port, nil)
 }
